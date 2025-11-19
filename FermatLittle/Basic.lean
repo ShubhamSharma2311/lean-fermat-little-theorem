@@ -13,6 +13,8 @@ variable {p : ℕ} [hp : Fact p.Prime]
 
 /-- Every natural number cast into `ZMod p` is fixed by `x ↦ x ^ p`. -/
 lemma pow_card_natCast (n : ℕ) : ((n : ZMod p)) ^ p = n := by
-  sorry
+  induction n with
+  | zero => simp [zero_pow hp.out.ne_zero]
+  | succ k ih => push_cast; rw [add_pow_char, ih, one_pow]
 
 end FermatLittle
