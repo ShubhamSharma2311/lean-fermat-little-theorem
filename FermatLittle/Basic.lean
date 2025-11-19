@@ -17,4 +17,8 @@ lemma pow_card_natCast (n : ℕ) : ((n : ZMod p)) ^ p = n := by
   | zero => simp [zero_pow hp.out.ne_zero]
   | succ k ih => push_cast; rw [add_pow_char, ih, one_pow]
 
+/-- **Fermat's little theorem**, `a ^ p = a` form. -/
+theorem pow_card (a : ZMod p) : a ^ p = a := by
+  sorry
+
 end FermatLittle
