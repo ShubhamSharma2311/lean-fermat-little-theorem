@@ -11,4 +11,8 @@ namespace FermatLittle
 
 variable {p : ℕ} [hp : Fact p.Prime]
 
+/-- Every natural number cast into `ZMod p` is fixed by `x ↦ x ^ p`. -/
+lemma pow_card_natCast (n : ℕ) : ((n : ZMod p)) ^ p = n := by
+  sorry
+
 end FermatLittle
