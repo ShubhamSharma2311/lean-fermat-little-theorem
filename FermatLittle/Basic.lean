@@ -22,4 +22,8 @@ theorem pow_card (a : ZMod p) : a ^ p = a := by
   have h := pow_card_natCast (p := p) a.val
   rwa [ZMod.natCast_zmod_val] at h
 
+/-- **Fermat's little theorem**, `a ^ (p - 1) = 1` for `a ≠ 0`. -/
+theorem pow_card_sub_one {a : ZMod p} (ha : a ≠ 0) : a ^ (p - 1) = 1 := by
+  sorry
+
 end FermatLittle
