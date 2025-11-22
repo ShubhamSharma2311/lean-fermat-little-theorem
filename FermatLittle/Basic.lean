@@ -24,6 +24,8 @@ theorem pow_card (a : ZMod p) : a ^ p = a := by
 
 /-- **Fermat's little theorem**, `a ^ (p - 1) = 1` for `a ≠ 0`. -/
 theorem pow_card_sub_one {a : ZMod p} (ha : a ≠ 0) : a ^ (p - 1) = 1 := by
-  sorry
+  have h : a ^ (p - 1) * a = 1 * a := by
+    rw [← pow_succ, Nat.sub_add_cancel hp.out.one_le, pow_card, one_mul]
+  exact mul_right_cancel₀ ha h
 
 end FermatLittle
