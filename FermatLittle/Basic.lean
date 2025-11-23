@@ -28,4 +28,8 @@ theorem pow_card_sub_one {a : ZMod p} (ha : a ≠ 0) : a ^ (p - 1) = 1 := by
     rw [← pow_succ, Nat.sub_add_cancel hp.out.one_le, pow_card, one_mul]
   exact mul_right_cancel₀ ha h
 
+/-- Integer form: `a ^ p ≡ a [ZMOD p]`. -/
+theorem int_pow_modEq (a : ℤ) : a ^ p ≡ a [ZMOD p] := by
+  sorry
+
 end FermatLittle
