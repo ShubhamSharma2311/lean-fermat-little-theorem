@@ -30,6 +30,8 @@ theorem pow_card_sub_one {a : ZMod p} (ha : a ≠ 0) : a ^ (p - 1) = 1 := by
 
 /-- Integer form: `a ^ p ≡ a [ZMOD p]`. -/
 theorem int_pow_modEq (a : ℤ) : a ^ p ≡ a [ZMOD p] := by
-  sorry
+  rw [← ZMod.intCast_eq_intCast_iff]
+  push_cast
+  exact pow_card _
 
 end FermatLittle
